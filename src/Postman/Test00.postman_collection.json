@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "b295aae0-fbc0-4740-92dd-c410cebecc09",
+		"name": "Test00",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth",
+						"value": "{{jwt}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{colektia_url_test}}/send/status/123",
+					"host": [
+						"{{colektia_url_test}}"
+					],
+					"path": [
+						"send",
+						"status",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendshipping",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth",
+						"value": "{{jwt}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "customer",
+							"value": "Jonathan Flores Pacheco",
+							"type": "text"
+						},
+						{
+							"key": "descrip",
+							"value": "Libro de regalo",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Pendiente",
+							"type": "text"
+						},
+						{
+							"key": "origin_lat",
+							"value": "19.78076",
+							"type": "text"
+						},
+						{
+							"key": "origin_long",
+							"value": "-99.202839",
+							"type": "text"
+						},
+						{
+							"key": "current_lat",
+							"value": "19.78076",
+							"type": "text"
+						},
+						{
+							"key": "current_long",
+							"value": "-99.202839",
+							"type": "text"
+						},
+						{
+							"key": "end_lat",
+							"value": "19.763357",
+							"type": "text"
+						},
+						{
+							"key": "end_long",
+							"value": "-99.194225",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{colektia_url_test}}/send/sendshipping",
+					"host": [
+						"{{colektia_url_test}}"
+					],
+					"path": [
+						"send",
+						"sendshipping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendshipping",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "auth",
+						"value": "{{jwt}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "status",
+							"value": "Pendiente",
+							"type": "text"
+						},
+						{
+							"key": "current_lat",
+							"value": "18.78076",
+							"type": "text"
+						},
+						{
+							"key": "current_long",
+							"value": "-98.202839",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{colektia_url_test}}/send/sendshipping/1",
+					"host": [
+						"{{colektia_url_test}}"
+					],
+					"path": [
+						"send",
+						"sendshipping",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "jwt",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ"
+		},
+		{
+			"key": "colektia_url_test",
+			"value": "http://localhost:3005"
+		}
+	]
+}
